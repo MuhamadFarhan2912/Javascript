@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 1 - JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Tugas 1 - Menghitung Luas Bangun Datar</h1>
+
+    <script>
+
+        function luasPersegiPanjang(panjang, lebar) {
+            return panjang * lebar;
+        }
+
+        function luasBujurSangkar(sisi) {
+            return sisi * sisi;
+        }
+
+        function luasSegitiga(alas, tinggi) {
+            return 0.5 * alas * tinggi;
+        }
+
+        let panjang = 10;
+        let lebar = 5;
+
+        let sisi = 6;
+
+        let alas = 8;
+        let tinggi = 6;
+
+        document.write("<h2>Persegi Panjang</h2>");
+        document.write("Panjang = " + panjang + "<br>");
+        document.write("Lebar = " + lebar + "<br>");
+        document.write("Luas = " + luasPersegiPanjang(panjang, lebar) + "<br>");
+
+        document.write("<h2>Bujur Sangkar</h2>");
+        document.write("Sisi = " + sisi + "<br>");
+        document.write("Luas = " + luasBujurSangkar(sisi) + "<br>");
+
+        document.write("<h2>Segitiga</h2>");
+        document.write("Alas = " + alas + "<br>");
+        document.write("Tinggi = " + tinggi + "<br>");
+        document.write("Luas = " + luasSegitiga(alas, tinggi) + "<br>");
+
+    </script>
+
+</body>
+</html>
