@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas 5 JavaScript</title>
+</head>
+<body>
+
+    <h1>Manajemen Produk</h1>
+
+    <button id="tambah">Tambah Produk</button>
+    <button id="hapus">Hapus Produk</button>
+    <button id="tampil">Tampilkan Produk</button>
+
+    <div id="hasil"></div>
+
+    <script>
+        let produkList = [
+            { id: 1, nama: "Laptop", harga: 12000000 },
+            { id: 2, nama: "Smartphone", harga: 5000000 },
+            { id: 3, nama: "Tablet", harga: 3000000 },
+            { id: 4, nama: "Keyboard", harga: 350000 },
+            { id: 5, nama: "Mouse", harga: 200000 }
+        ];
+
+        const eventHandler = {
+            tambah: document.getElementById("tambah"),
+            hapus: document.getElementById("hapus"),
+            tampil: document.getElementById("tampil")
+        };
+
+        function tambahProduk(id, nama, harga) {
+            const produkBaru = { id, nama, harga };
+
+            produkList = [...produkList, produkBaru];
+        }
+
+        function hapusProduk(...id) {
+            produkList = produkList.filter(produk => !id.includes(produk.id));
+        }
+
+        function tampilkanProduk() {
+            let hasil = "<h2>Daftar Produk</h2>";
+
+            produkList.forEach(function(produk) {
+                const { id, nama, harga } = produk;
+
+                hasil +=
+                    "ID: " + id +
+                    " | Nama: " + nama +
+                    " | Harga: Rp" + harga +
+                    "<br>";
+            });
+
+            document.getElementById("hasil").innerHTML = hasil;
+        }
+
+        eventHandler.tambah.addEventListener("click", function() {
+            tambahProduk(6, "Monitor", 1500000);
+            tampilkanProduk();
+        });
+
+        eventHandler.hapus.addEventListener("click", function() {
+            hapusProduk(2);
+            tampilkanProduk();
+        });
+
+        eventHandler.tampil.addEventListener("click", function() {
+            tampilkanProduk();
+        });
+
+        tampilkanProduk();
+    </script>
+
+</body>
+</html>
